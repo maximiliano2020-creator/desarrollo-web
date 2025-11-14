@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Comparador de palabras</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f6f9;
+    }
+
+    #palabra {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 300px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+      color: #007700;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Comparador de palabras</h1>
+  <p id="palabra">Cargando...</p>
+
+  <input type="text" id="entrada" placeholder="Escribí la palabra" />
+  <br />
+  <button onclick="verificar()">Verificar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    const palabras = ["validación", "cableado", "multisensorial", "estructura", "rutina", "símbolo", "accesibilidad"];
+    let palabraActual = "";
+
+    function nuevaPalabra() {
+      const indice = Math.floor(Math.random() * palabras.length);
+      palabraActual = palabras[indice];
+      document.getElementById("palabra").textContent = palabraActual;
+      document.getElementById("entrada").value = "";
+      document.getElementById("resultado").textContent = "";
+    }
+
+    function verificar() {
+      const entrada = document.getElementById("entrada").value;
+      const resultado = entrada === palabraActual
+        ? "✔ Correcto"
+        : "❌ Incorrecto. Intentá de nuevo.";
+      document.getElementById("resultado").textContent = resultado;
+    }
+
+    // Mostrar una palabra al cargar
+    window.onload = nuevaPalabra;
+  </script>
+</body>
+</html>

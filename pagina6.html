@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valor de tu nombre</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f6f9;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 250px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔤 Valor de tu nombre</h1>
+  <input type="text" id="nombre" placeholder="Escribí tu nombre" />
+  <br />
+  <button onclick="calcularValor()">Calcular</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    function calcularValor() {
+      const nombre = document.getElementById("nombre").value.toUpperCase();
+      let suma = 0;
+
+      for (let i = 0; i < nombre.length; i++) {
+        const codigo = nombre.charCodeAt(i);
+        if (codigo >= 65 && codigo <= 90) {
+          suma += codigo - 64; // A=65 → 1, B=66 → 2, ..., Z=90 → 26
+        }
+      }
+
+      let mensaje = `🔢 Valor total: ${suma}. `;
+      mensaje += suma > 50 ? "🎉 ¡Felicitaciones!" : "💡 Podés intentarlo con otro nombre.";
+
+      document.getElementById("resultado").textContent = mensaje;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contador de Clicks</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 50px;
+      color: #222;
+    }
+
+    h1 {
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    #contador {
+      font-size: 48px;
+      margin: 20px 0;
+      color: #333;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contador de Clicks</h1>
+  <p>Haz clic en el botón para aumentar el contador:</p>
+
+  <div id="contador">0</div>
+  <button onclick="sumarClick()">¡Click!</button>
+
+  <script>
+    let contador = 0;
+
+    function sumarClick() {
+      contador++;
+      document.getElementById("contador").textContent = contador;
+    }
+  </script>
+</body>
+</html>

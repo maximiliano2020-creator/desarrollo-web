@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pagina principal: Progrmacion Web</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      color: #222;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: #222;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      background-color: #e6f2ff;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <h1>Programacion web Web: 10 Páginas con HTML, CSS y JS</h1>
+  <p>Selecciona una página para explorar su funcionalidad:</p>
+
+  <div class="grid">
+    <a class="card" href="pagina1.html">Página 1 – Contador de clicks</a>
+    <a class="card" href="pagina2.html">Página 2 – verdadero o falso</a>
+    <a class="card" href="pagina3.html">Página 3 – multiplicacion y divicion</a>
+    <a class="card" href="pagina4.html">Página 4 – comparador</a>
+    <a class="card" href="pagina5.html">Página 5 – historia clasica</a>
+    <a class="card" href="pagina6.html">Página 6 – traductor de nombre</a>
+    <a class="card" href="pagina7.html">Página 7 – contar historia</a>
+    <a class="card" href="pagina8.html">Página 8 – adivina el numero</a>
+    <a class="card" href="pagina9.html">Página 9 – que hace cada pagina?</a>
+  </div>
+
+  <footer>
+    © 2025 Maximiliano martinez. pagina principal
+  </footer>
+</body>
+</html>

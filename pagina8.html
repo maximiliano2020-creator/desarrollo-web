@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Adivinanza numérica</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px;
+      background-color: #f4f6f9;
+    }
+
+    input {
+      padding: 10px;
+      font-size: 18px;
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 Adiviná el número</h1>
+  <p>Ingresá un número del <strong>1 al 10</strong>.</p>
+
+  <input type="number" id="entrada" min="1" max="10" />
+  <br />
+  <button onclick="verificar()">Verificar</button>
+
+  <p id="resultado"></p>
+
+  <script>
+    let numeroCorrecto = Math.floor(Math.random() * 10) + 1;
+
+    function verificar() {
+      const entrada = parseInt(document.getElementById("entrada").value);
+      let mensaje = "";
+
+      if (isNaN(entrada) || entrada < 1 || entrada > 10) {
+        mensaje = "⚠ Ingresá un número válido entre 1 y 10.";
+      } else if (entrada === numeroCorrecto) {
+        mensaje = "🎉 ¡Ganaste! Adivinaste el número correcto.";
+      } else {
+        mensaje = "❌ Incorrecto. Probá de nuevo.";
+      }
+
+      document.getElementById("resultado").textContent = mensaje;
+    }
+  </script>
+</body>
+</html>

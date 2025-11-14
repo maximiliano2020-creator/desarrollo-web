@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>¿Cuál es la correcta?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f6f9;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1 {
+      color: #0077cc;
+    }
+
+    .opciones {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background-color: #e0e0e0;
+      transition: background-color 0.2s ease;
+    }
+
+    button:hover {
+      background-color: #d0d0d0;
+    }
+
+    #resultado {
+      margin-top: 40px;
+      font-size: 20px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1>¿Cuál es la opción correcta?</h1>
+  <p>Elegí una de las tres opciones. La correcta cambia cada vez.</p>
+
+  <div class="opciones">
+    <button onclick="verificar(0)">Opción A</button>
+    <button onclick="verificar(1)">Opción B</button>
+    <button onclick="verificar(2)">Opción C</button>
+  </div>
+
+  <p id="resultado"></p>
+
+  <script>
+    let correcta = Math.floor(Math.random() * 3); // 0, 1 o 2
+
+    function verificar(eleccion) {
+      if (eleccion !== correcta) {
+        document.getElementById('resultado').textContent = "Incorrecto. Intenta de nuevo.";
+      } else {
+        document.getElementById('resultado').textContent = "correcto! Bien hecho.";
+        correcta = Math.floor(Math.random() * 3);
+      }
+
+      // Elegir nueva correcta para el próximo intento
+      
+    }
+  </script>
+</body>
+</html>
